@@ -12,7 +12,7 @@ function ShowList() {
         );
         const data = await response.json();
         setShows(data);
-        // console.log(data);
+        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -24,18 +24,42 @@ function ShowList() {
   if (!shows) return <h1>Loading...</h1>;
 
   return (
-    <div>
-      <h1>Show List</h1>
-      <ul>
-        {shows.map((show) => (
-          <li key={show.show.id}>
-            <Link to={`/show/${show.show.id}`}>
-              {show.show?.name} - {show.show.network?.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <h1 className="show-list-heading">SHOW LIST</h1>
+      <div className="show-flex">
+        <div className="shows">
+          {shows &&
+            shows.map((show) => (
+              <div key={show.show.id} className="shows-card">
+                <div className="show-original-img">
+                  <img src={show.show?.image?.original} alt={show.show?.name} />
+                </div>
+                <div className="show-info">
+                  <div className="show-info__detail">
+                    <p>Name: {show.show?.name}</p>
+                    <p>
+                      Genre:{" "}
+                      {`${show.show?.genres[0]}, ${show.show?.genres[1]}`}
+                    </p>
+                  </div>
+                  <button className="more-btn">
+                    <Link
+                      to={`/show/${show.show.id}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit" /* Inherit color from the parent */,
+                        cursor: "pointer",
+                      }}
+                    >
+                      More
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </>
   );
 }
 

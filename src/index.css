@@ -17,6 +17,7 @@ body {
 
 h1 {
   color: #333;
+  text-align: center;
 }
 
 ul {
@@ -51,3 +52,95 @@ button:hover {
 }
 
 /* Add more styles based on your needs */
+
+/* Ambika Css */
+.show-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.show-list-heading {
+  margin: 2rem 0 4rem 0;
+}
+
+.shows {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 4rem;
+  column-gap: 3rem;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.shows-card {
+  border-radius: 3px;
+  box-shadow: 5px 5px 20px black;
+}
+
+.show-original-img {
+  /* width: 70%; */
+  /* height: 100%;   */
+  /* object-fit: contain; */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.show-original-img:hover {
+  transform: scale(0.9);
+  transform-origin: center center;
+}
+
+.show-original-img img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 3px;
+  /* object-position: center; */
+}
+
+.show-info {
+  padding: 0 0 1rem 1rem;
+}
+
+.show-info__detail {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+}
+
+.more-btn {
+  margin-top: 0.5rem;
+}
+
+/* Details */
+
+.details {
+  display: flex;
+  padding: 4rem 5rem 0 5rem;
+  margin-bottom: 5rem;
+  gap: 2rem;
+}
+
+.detail-img {
+  /* overflow: hidden; */
+  width: 30%;
+}
+
+.detail-text {
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  right: 0;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: #333;
+}
